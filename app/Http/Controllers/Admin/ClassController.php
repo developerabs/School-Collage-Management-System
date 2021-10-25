@@ -25,7 +25,11 @@ class ClassController extends Controller
         $data = new StudentClass(); 
         $data->name = $request->name; 
         $data->save();
-        return redirect()->route('class.view');
+        $notification = array(
+            'message' => 'New Class Added Successfully',
+            'alert-type' => 'success' 
+        );
+        return redirect()->route('class.view')->with($notification);
     }
     public function edit($id)
     {
@@ -40,12 +44,20 @@ class ClassController extends Controller
         $data = StudentClass::find($id); 
         $data->name = $request->name;  
         $data->save();
-        return redirect()->route('class.view');
+        $notification = array(
+            'message' => 'Class Updated Successfully',
+            'alert-type' => 'info' 
+        );
+        return redirect()->route('class.view')->with($notification);
     }
     public function delete($id)
     {
         $data = StudentClass::find($id);
         $data->delete();
-        return redirect()->route('class.view');
+        $notification = array(
+            'message' => 'Class Deleted Successfully',
+            'alert-type' => 'error' 
+        );
+        return redirect()->route('class.view')->with($notification);
     }
 }

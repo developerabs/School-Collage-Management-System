@@ -25,7 +25,11 @@ class StudentYearController extends Controller
         $data = new StudentYear(); 
         $data->name = $request->name; 
         $data->save();
-        return redirect()->route('year.view');
+        $notification = array(
+            'message' => 'New Year Added Successfully',
+            'alert-type' => 'success' 
+        );
+        return redirect()->route('year.view')->with($notification);
     }
     public function edit($id)
     {
@@ -40,12 +44,20 @@ class StudentYearController extends Controller
         $data = StudentYear::find($id); 
         $data->name = $request->name;  
         $data->save();
-        return redirect()->route('year.view');
+        $notification = array(
+            'message' => 'Year Updated Successfully',
+            'alert-type' => 'info' 
+        );
+        return redirect()->route('year.view')->with($notification);
     }
     public function delete($id)
     {
         $data = StudentYear::find($id);
         $data->delete();
-        return redirect()->route('year.view');
+        $notification = array(
+            'message' => 'Year deleted Successfully',
+            'alert-type' => 'error' 
+        );
+        return redirect()->route('year.view')->with($notification);
     }
 }

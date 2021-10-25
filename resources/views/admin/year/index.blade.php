@@ -13,7 +13,7 @@
       <div class="card mb-3">
           <div class="card-header">
               <div class="caption uppercase">
-                  All Users
+                  All Year
               </div>
               <div class="tools">
                 <a href="{{ route('year.add') }}" class="btn btn-success btn-rounded btn-fw ">Add New</a>
@@ -36,7 +36,7 @@
                             <td>{{ $item->name }}</td> 
                             <td>
                                 <a href="{{ route('year.edit',$item->id) }}" class="btn btn-warning btn-rounded btn-sm">Edit</a>
-                                <a href="{{ route('year.delete',$item->id) }}" class="btn btn-danger btn-rounded btn-sm">Delete</a>
+                                <a href="{{ route('year.delete',$item->id) }}" id="delete" class="btn btn-danger btn-rounded btn-sm">Delete</a>
                             </td>
                           </tr>
                           @endforeach

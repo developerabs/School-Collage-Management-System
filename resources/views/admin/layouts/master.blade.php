@@ -20,7 +20,7 @@
 
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
-    <link rel="stylesheet" href="{{ asset('admin/css/pages/dashboard1.css') }}">
+    <link rel="stylesheet" href="{{ asset('admin/css/pages/dashboard1.css') }}"> 
 </head>
 
 <body class="theme-dark">
@@ -472,11 +472,58 @@
 
         <div id="overlay"></div>
 
-    </div> <!-- END WRAPPER -->
-
+    </div> <!-- END WRAPPER -->  
+    <script src="{{ asset('admin/js/sweetalert.js')}}"></script> 
     <script src="{{ asset('admin/scripts/siqtheme.js')}}"></script>
     <script src="{{ asset('admin/scripts/pages/dashboard1.js')}}"></script>
     <script src="{{ asset('admin/scripts/pages/tb_datatables.js')}}"></script>
+    <script> 
+       
+       $(document).on('click','#delete',function(e){
+        e.preventDefault();
+        var link = $(this).attr("href");
+                Swal.fire({
+                title: 'Are you sure?',
+                text: "You want to delete this data!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: 'rgb(14, 165, 94)',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                if (result.isConfirmed) {
+                window.location.href = link;
+                    Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                    )
+                }
+                })
+
+        }); 
+        
+        
+    </script> 
+     <script>
+        @if(Session::has('message'))
+          var type="{{Session::get('alert-type','info')}}"
+          switch(type){
+              case 'info':
+                   toastr.info("{{ Session::get('message') }}");
+                   break;
+              case 'success':
+                  toastr.success("{{ Session::get('message') }}");
+                  break;
+              case 'warning':
+                 toastr.warning("{{ Session::get('message') }}");
+                  break;
+              case 'error':
+                  toastr.error("{{ Session::get('message') }}");
+                  break;
+          }
+        @endif
+     </script>
 </body>
 
 
