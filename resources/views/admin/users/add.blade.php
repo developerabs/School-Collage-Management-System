@@ -15,6 +15,15 @@
         <h4 class="card-title">Add New User</h4> 
         <form class="forms-sample" action="{{ route('user.store') }}" method="POST">
             @csrf
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">

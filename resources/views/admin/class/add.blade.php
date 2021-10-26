@@ -15,14 +15,23 @@
         <h4 class="card-title">Add New Class</h4> 
         <form class="forms-sample" action="{{ route('class.store') }}" method="POST">
             @csrf
-            <div class="row"> 
-                <div class="col-md-6">
-                    <div class="form-group">
-                        <label for="exampleInputName1">Name *</label>
-                        <input type="text" name="name" class="form-control" id="exampleInputName1" placeholder="Name" required>
-                    </div>
-                </div>  
-            </div>
+            @if ($errors->any())
+              <div class="alert alert-danger">
+                  <ul>
+                      @foreach ($errors->all() as $error)
+                          <li>{{ $error }}</li>
+                      @endforeach
+                  </ul>
+              </div>
+          @endif
+          <div class="row"> 
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for="exampleInputName1">Name *</label>
+                      <input type="text" name="name" class="form-control" id="exampleInputName1" value="{{ old('name') }}" placeholder="Name" required>
+                  </div>
+              </div>  
+          </div>
           <button type="submit" class="btn btn-primary me-2">Submit</button> 
         </form>
       </div>

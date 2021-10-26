@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ClassController;
 use App\Http\Controllers\Admin\StudentYearController;
+use App\Http\Controllers\Admin\StudentGroupController;
+use App\Http\Controllers\Admin\StudentShiftController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +51,20 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
             Route::get('year/edit/{id}',[StudentYearController::class, 'edit'])->name('year.edit');
             Route::post('year/update/{id}',[StudentYearController::class, 'update'])->name('year.update');
             Route::get('year/delete/{id}',[StudentYearController::class, 'delete'])->name('year.delete'); 
+            //student group routes
+            Route::get('group/view',[StudentGroupController::class, 'index'])->name('group.view');
+            Route::get('group/add',[StudentGroupController::class, 'add'])->name('group.add');
+            Route::post('group/store',[StudentGroupController::class, 'store'])->name('group.store');
+            Route::get('group/edit/{id}',[StudentGroupController::class, 'edit'])->name('group.edit');
+            Route::post('group/update/{id}',[StudentGroupController::class, 'update'])->name('group.update');
+            Route::get('group/delete/{id}',[StudentGroupController::class, 'delete'])->name('group.delete'); 
+            //student shift routes
+            Route::get('shift/view',[StudentShiftController::class, 'index'])->name('shift.view');
+            Route::get('shift/add',[StudentShiftController::class, 'add'])->name('shift.add');
+            Route::post('shift/store',[StudentShiftController::class, 'store'])->name('shift.store');
+            Route::get('shift/edit/{id}',[StudentShiftController::class, 'edit'])->name('shift.edit');
+            Route::post('shift/update/{id}',[StudentShiftController::class, 'update'])->name('shift.update');
+            Route::get('shift/delete/{id}',[StudentShiftController::class, 'delete'])->name('shift.delete'); 
     });
     
 });

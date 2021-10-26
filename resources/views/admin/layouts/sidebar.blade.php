@@ -44,6 +44,12 @@
                           <li >
                               <a href="{{ route('year.view') }}">Student Year</a>
                           </li> 
+                          <li >
+                              <a href="{{ route('group.view') }}">Student Group</a>
+                          </li> 
+                          <li >
+                              <a href="{{ route('shift.view') }}">Student Shift</a>
+                          </li> 
                       </ul>
                   </div>
               </li>
