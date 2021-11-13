@@ -38,7 +38,7 @@
                   </a>
                   <div class="subcat">
                       <ul>
-                          <li class="active">
+                          <li>
                               <a href="{{ route('class.view') }}">Student Class</a>
                           </li>
                           <li >
@@ -49,6 +49,9 @@
                           </li> 
                           <li >
                               <a href="{{ route('shift.view') }}">Student Shift</a>
+                          </li> 
+                          <li >
+                              <a href="{{ route('feeCategory.view') }}">Student Fee Category</a>
                           </li> 
                       </ul>
                   </div>

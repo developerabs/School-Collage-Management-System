@@ -10,7 +10,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $data['users'] = User::all();
+        $data['users'] = User::orderby('id','desc')->get();
         return view('admin.users.index',$data);
     }
     public function add()

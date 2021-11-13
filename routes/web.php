@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ClassController;
 use App\Http\Controllers\Admin\StudentYearController;
 use App\Http\Controllers\Admin\StudentGroupController;
 use App\Http\Controllers\Admin\StudentShiftController;
+use App\Http\Controllers\Admin\FeeCategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,13 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
             Route::get('shift/edit/{id}',[StudentShiftController::class, 'edit'])->name('shift.edit');
             Route::post('shift/update/{id}',[StudentShiftController::class, 'update'])->name('shift.update');
             Route::get('shift/delete/{id}',[StudentShiftController::class, 'delete'])->name('shift.delete'); 
+            //student shift routes
+            Route::get('fee-category/view',[FeeCategoryController::class, 'index'])->name('feeCategory.view');
+            Route::get('fee-category/add',[FeeCategoryController::class, 'add'])->name('feeCategory.add');
+            Route::post('fee-category/store',[FeeCategoryController::class, 'store'])->name('feeCategory.store');
+            Route::get('fee-category/edit/{id}',[FeeCategoryController::class, 'edit'])->name('feeCategory.edit');
+            Route::post('fee-category/update/{id}',[FeeCategoryController::class, 'update'])->name('feeCategory.update');
+            Route::get('fee-category/delete/{id}',[FeeCategoryController::class, 'delete'])->name('feeCategory.delete'); 
     });
     
 });

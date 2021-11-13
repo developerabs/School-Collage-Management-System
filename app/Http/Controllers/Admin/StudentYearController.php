@@ -10,7 +10,7 @@ class StudentYearController extends Controller
 {
     public function index()
     {
-        $data['allData'] = StudentYear::all();
+        $data['allData'] = StudentYear::orderby('id','desc')->get();
         return view('admin.year.index',$data);
     }
     public function add()

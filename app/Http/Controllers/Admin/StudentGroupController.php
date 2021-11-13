@@ -10,7 +10,7 @@ class StudentGroupController extends Controller
 {
     public function index()
     {
-        $data['allData'] = StudentGroup::all();
+        $data['allData'] = StudentGroup::orderby('id','desc')->get();
         return view('admin.group.index',$data);
     }
     public function add()

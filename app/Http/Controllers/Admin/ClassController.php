@@ -10,7 +10,7 @@ class ClassController extends Controller
 {
     public function index()
     {
-        $data['allData'] = StudentClass::all();
+        $data['allData'] = StudentClass::orderby('id','desc')->get();
         return view('admin.class.index',$data);
     }
     public function add()

@@ -10,7 +10,7 @@ class StudentShiftController extends Controller
 {
     public function index()
     {
-        $data['allData'] = StudentShift::all();
+        $data['allData'] = StudentShift::orderby('id','desc')->get();
         return view('admin.shift.index',$data);
     }
     public function add()

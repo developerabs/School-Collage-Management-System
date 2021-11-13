@@ -4,7 +4,7 @@
   <div class="col">
       <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/"><i class="ti-home"></i> Dashboard</a></li>
-          <li class="breadcrumb-item"><a href="{{ route('class.view') }}"> Classes</a></li>
+          <li class="breadcrumb-item"><a href="{{ route('feeCategory.view') }}"> Fee Category</a></li>
       </ol>
   </div>
 </div>
@@ -13,10 +13,10 @@
       <div class="card mb-3">
           <div class="card-header">
               <div class="caption uppercase">
-                  All Class
+                  All Fee Category
               </div>
               <div class="tools">
-                <a href="{{ route('class.add') }}" class="btn btn-success btn-rounded btn-fw ">Add New</a>
+                <a href="{{ route('feeCategory.add') }}" class="btn btn-success btn-rounded btn-fw ">Add New</a>
               </div>
           </div>
           <div class="card-body">
@@ -35,8 +35,8 @@
                             <td>{{ $key+1 }}</td> 
                             <td>{{ $item->name }}</td> 
                             <td>
-                                <a href="{{ route('class.edit',$item->id) }}" class="btn btn-warning btn-rounded btn-sm">Edit</a>
-                                <a href="{{ route('class.delete',$item->id) }}" id="delete" class="btn btn-danger btn-rounded btn-sm">Delete</a>
+                                <a href="{{ route('feeCategory.edit',$item->id) }}" class="btn btn-warning btn-rounded btn-sm">Edit</a>
+                                <a href="{{ route('feeCategory.delete',$item->id) }}" id="delete" class="btn btn-danger btn-rounded btn-sm">Delete</a>
                             </td>
                           </tr>
                           @endforeach
