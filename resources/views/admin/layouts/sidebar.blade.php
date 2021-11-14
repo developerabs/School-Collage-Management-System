@@ -53,6 +53,9 @@
                           <li >
                               <a href="{{ route('feeCategory.view') }}">Student Fee Category</a>
                           </li> 
+                          <li >
+                              <a href="{{ route('feeCategoryAmount.view') }}">Student Fee Category Amount</a>
+                          </li> 
                       </ul>
                   </div>
               </li>

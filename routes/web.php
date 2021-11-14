@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\StudentYearController;
 use App\Http\Controllers\Admin\StudentGroupController;
 use App\Http\Controllers\Admin\StudentShiftController;
 use App\Http\Controllers\Admin\FeeCategoryController;
+use App\Http\Controllers\Admin\FeeCategoryAmountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -66,13 +67,20 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function() {
             Route::get('shift/edit/{id}',[StudentShiftController::class, 'edit'])->name('shift.edit');
             Route::post('shift/update/{id}',[StudentShiftController::class, 'update'])->name('shift.update');
             Route::get('shift/delete/{id}',[StudentShiftController::class, 'delete'])->name('shift.delete'); 
-            //student shift routes
+            //student feeCategory routes
             Route::get('fee-category/view',[FeeCategoryController::class, 'index'])->name('feeCategory.view');
             Route::get('fee-category/add',[FeeCategoryController::class, 'add'])->name('feeCategory.add');
             Route::post('fee-category/store',[FeeCategoryController::class, 'store'])->name('feeCategory.store');
             Route::get('fee-category/edit/{id}',[FeeCategoryController::class, 'edit'])->name('feeCategory.edit');
             Route::post('fee-category/update/{id}',[FeeCategoryController::class, 'update'])->name('feeCategory.update');
             Route::get('fee-category/delete/{id}',[FeeCategoryController::class, 'delete'])->name('feeCategory.delete'); 
+            //student shift routes
+            Route::get('fee-category-amount/view',[FeeCategoryAmountController::class, 'index'])->name('feeCategoryAmount.view');
+            Route::get('fee-category-amount/add',[FeeCategoryAmountController::class, 'add'])->name('feeCategoryAmount.add');
+            Route::post('fee-category-amount/store',[FeeCategoryAmountController::class, 'store'])->name('feeCategoryAmount.store');
+            Route::get('fee-category-amount/edit/{id}',[FeeCategoryAmountController::class, 'edit'])->name('feeCategoryAmount.edit');
+            Route::post('fee-category-amount/update/{id}',[FeeCategoryAmountController::class, 'update'])->name('feeCategoryAmount.update');
+            Route::get('fee-category-amount/delete/{id}',[FeeCategoryAmountController::class, 'delete'])->name('feeCategoryAmount.delete'); 
     });
     
 });

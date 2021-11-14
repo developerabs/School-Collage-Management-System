@@ -15,7 +15,8 @@
     <meta name="author" content="siQuang - Simon Nguyen" />
 
     <title>ERP System</title>
-
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="{{ asset('admin/css/siqtheme.css') }}">
 
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
